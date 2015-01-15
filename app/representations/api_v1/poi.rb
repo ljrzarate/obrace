@@ -4,7 +4,7 @@ module ApiV1::Poi
     api_accessible :basic do |template|
       template.add :id
       template.add lambda { |poi| {title: poi.title, footnote: poi.footnote, description: poi.description} }, as: :text
-      template.add lambda { |poi|  {geolocation: {latitude: poi.latitude, longitude: poi.longitude}} }, as: :anchor
+      template.add lambda { |poi|  {geolocation: {lat: poi.latitude, lon: poi.longitude}} }, as: :anchor
       template.add :image_url
     end
   end
